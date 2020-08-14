@@ -1,11 +1,19 @@
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li>
-      <%= link_to cocktail_path(cocktail) do  %>
-        <%= cocktail.name %>
-      <% end %>
+<div class="container">
 
-      </li>
-  <% end %>
-  <%= link_to 'new', new_cocktail_path, class: "btn btn-success" %>
-</ul>
+  <h1>MMMMHHHHH APPROCHEZ APPROCHEZ !</h1>
+  <ul>
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-product">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        <div class="card-product-infos">
+          <%= link_to cocktail_path(cocktail) do  %>
+          <h2><%= cocktail.name %></h2>
+            <% end %>
+        </div>
+      </div>
+    <% end %>
+    <hr>
+    <%= link_to 'new', new_cocktail_path, class: "btn btn-ghost" %>
+  </ul>
+
+</div>
