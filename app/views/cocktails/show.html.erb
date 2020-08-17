@@ -1,7 +1,15 @@
 <%= @cocktail.name %>
+  <% if @cocktail.photo.attached? %>
+    <%= cl_image_tag @cocktail.photo.key, width: 600 %>
+  <% else %>
+    <%= cl_image_tag('fvwhtidmelmpw4vhbwq3', width: 600) %>
+  <% end %>
 <ul>
+
   <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.description %> - <%= link_to 'Remove', dose_path(dose), method: :delete %> |</li>
+    <li>
+
+  <%= dose.description %> - <%= dose.ingredient.name %>  <%= link_to 'Remove', dose_path(dose), method: :delete %> |</li>
   <% end %>
 </ul>
 <%= link_to 'Back', cocktails_path(@cocktail) %> |

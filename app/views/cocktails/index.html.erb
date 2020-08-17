@@ -4,8 +4,8 @@
   <ul>
     <% @cocktails.each do |cocktail| %>
       <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="card-product-infos">
+
           <%= link_to cocktail_path(cocktail) do  %>
           <h2><%= cocktail.name %></h2>
             <% end %>
